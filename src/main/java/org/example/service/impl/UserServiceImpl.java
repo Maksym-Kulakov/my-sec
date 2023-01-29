@@ -24,4 +24,10 @@ public class UserServiceImpl implements UserService {
         return userDao.get(id).orElseThrow(()
                 -> new DtoException("Can not get user with id " + id));
     }
+
+    @Override
+    public User findByEmail(String email) {
+        return userDao.findByEmail(email).orElseThrow(()
+                -> new DtoException("Can`t find user with email " + email));
+    }
 }

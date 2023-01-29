@@ -1,5 +1,6 @@
 package org.example.model.mapper;
 
+import org.example.model.Role;
 import org.example.model.User;
 import org.example.model.dto.UserRequestDto;
 import org.example.model.dto.UserResponseDto;
@@ -14,6 +15,7 @@ public class UserMapper implements Mapper<User,UserRequestDto,UserResponseDto> {
                 .email(userRequestDto.getEmail())
                 .age(userRequestDto.getAge())
                 .password(userRequestDto.getPassword())
+                .role(Role.valueOf(userRequestDto.getRole()))
                 .build();
     }
 
@@ -24,6 +26,7 @@ public class UserMapper implements Mapper<User,UserRequestDto,UserResponseDto> {
                 .name(user.getName())
                 .email(user.getEmail())
                 .age(user.getAge())
+                .role(user.getRole().name())
                 .build();
     }
 }
