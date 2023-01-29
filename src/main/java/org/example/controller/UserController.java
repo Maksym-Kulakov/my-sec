@@ -4,6 +4,7 @@ import org.example.model.dto.UserRequestDto;
 import org.example.model.dto.UserResponseDto;
 import org.example.model.mapper.UserMapper;
 import org.example.service.UserService;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,5 +31,10 @@ public class UserController {
     @GetMapping("/{id}")
     public UserResponseDto getUser(@PathVariable Long id) {
         return userMapper.toDto(userService.get(id));
+    }
+
+    @GetMapping
+    public String getAuthDetails(Authentication authentication) {
+        return authentication.getName();
     }
 }

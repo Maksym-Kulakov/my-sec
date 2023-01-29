@@ -15,4 +15,5 @@ public class UserResponseDto {
     private String password;
     private String name;
     private int age;
+    private String role;
 }

@@ -6,6 +6,7 @@ CREATE TABLE users (
                          age int NOT NULL,
                          email varchar(255) DEFAULT NULL,
                          name varchar(255) DEFAULT NULL,
+                         role varchar(255) DEFAULT NULL,
                          password varchar(255) DEFAULT NULL,
                          PRIMARY KEY (id)
 );
